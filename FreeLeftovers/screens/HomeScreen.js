@@ -1,5 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Button, ScrollView, SafeAreaView } from 'react-native';
+import { Stack, useRouter } from 'expo-router';
+
+import { COLORS, icons, images, SIZES } from '../constants';
 
 import Post from '../Post';
 
@@ -9,6 +13,9 @@ export default function HomeScreen() {
       <Post>
 
       </Post>
+      <View style={styles.container}>
+
+      </View>
     </View>
     
   );
