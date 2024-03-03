@@ -5,6 +5,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeScreen from './screens/HomeScreen';
 import PointsScreen from './screens/PointsScreen';
+import MainScreen from './screens/MainScreen';
+import ClaimedItemsScreen from './screens/ClaimedItemsScreen';
+import NewFoodItemScreen from './screens/NewFoodItemScreen';
+
 
 export default function App() {
   const Tab = createBottomTabNavigator();
@@ -13,6 +17,9 @@ export default function App() {
       <Tab.Navigator>
         <Tab.Screen name='HomeScreen' component={HomeScreen} />
         <Tab.Screen name='PointsScreen' component={PointsScreen} />
+        <Tab.Screen name='MainScreen' component={MainScreen} />
+        <Tab.Screen name='ClaimedItemsScreen' component={ClaimedItemsScreen} />
+        <Tab.Screen name='NewFoodItemScreen' component={NewFoodItemScreen} />
       </Tab.Navigator> 
     </NavigationContainer>
     /*
