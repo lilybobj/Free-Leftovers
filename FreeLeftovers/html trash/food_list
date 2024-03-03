@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Food Items</title>
+    <style>
+        #food-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .food-item {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Available Food Items</h2>
+    <ul id="food-list"></ul>
+
+    <button onclick="openAddFoodPage()">Add Food Item</button>
+    <a href="my_claims.html">My Claims</a>
+
+    <script>
+        let foodItems = [
+            { name: "Apple", claimed: false },
+            { name: "Banana", claimed: false },
+            { name: "Orange", claimed: false }
+            // Add more food items as needed
+        ];
+
+        function displayFoodItems() {
+            const foodList = document.getElementById('food-list');
+            foodList.innerHTML = ''; // Clear existing list
+
+            foodItems.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.classList.add('food-item');
+                li.innerHTML = `
+                    <span>${item.name}</span>
+                    <button onclick="claimFood(${index})" ${item.claimed ? 'disabled' : ''}>Claim</button>
+                `;
+                foodList.appendChild(li);
+            });
+        }
+
+        function claimFood(index) {
+            foodItems[index].claimed = true;
+            displayFoodItems();
+        }
+
+        function openAddFoodPage() {
+            const newWindow = window.open('add_food.html', 'Add Food', 'width=400,height=200');
+        }
+
+        // Function to add a new food item
+        function addFoodItem(foodName) {
+            const newFoodItem = { name: foodName, claimed: false };
+            foodItems.push(newFoodItem);
+            displayFoodItems();
+        }
+
+        displayFoodItems();
+    </script>
+</body>
+</html>

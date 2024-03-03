@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Claims</title>
+    <style>
+        #claimed-food-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .claimed-food-item {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>My Claims</h2>
+    <ul id="claimed-food-list"></ul>
+
+    <script>
+        const claimedFoodItems = JSON.parse(localStorage.getItem('claimedFoodItems')) || [];
+
+        function displayClaimedFoodItems() {
+            const claimedFoodList = document.getElementById('claimed-food-list');
+            claimedFoodList.innerHTML = '';
+
+            claimedFoodItems.forEach((item) => {
+                const li = document.createElement('li');
+                li.classList.add('claimed-food-item');
+                li.textContent = item.name;
+                claimedFoodList.appendChild(li);
+            });
+        }
+
+        displayClaimedFoodItems();
+    </script>
+</body>
+</html>
