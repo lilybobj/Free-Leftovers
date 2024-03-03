@@ -1,14 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-import Post from '../Post';
-
-export default function HomeScreen() {
+export default function Post() {
   return (  
     <View style={styles.container}>
-      <Post>
-
-      </Post>
+      <Text>Josh's Banana</Text>
+      <StatusBar style="auto" />
+      <Button title="hi"></Button>
     </View>
     
   );
