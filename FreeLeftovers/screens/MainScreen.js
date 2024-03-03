@@ -40,16 +40,19 @@ const MainScreen = ({ navigation }) => {
 };
 
 export default MainScreen;*/
+
 const MainScreen = ({ navigation }) => {
     const [availableItems, setAvailableItems] = useState(["Apple", "Banana", "Orange"]);
 
-    const [claimedItems, setClaimedItems] = useState([]);
-
     const claimFoodItem = (index) => {
-        const itemToClaim = availableItems[index];
+        const claimedItem = availableItems[index];
         setAvailableItems(prevItems => prevItems.filter((item, i) => i !== index));
-        setClaimedItems(prevItems => [...prevItems, itemToClaim]);
+        // Update the claimed items list or perform any other action
     }
+
+    const handleAddFoodItem = (newItem) => {
+        setAvailableItems(prevItems => [...prevItems, newItem]);
+    };
 
     return (
         <View>
@@ -68,8 +71,8 @@ const MainScreen = ({ navigation }) => {
                 keyExtractor={(item, index) => index.toString()}
             />
             <Button
-                title="Go to My Claims"
-                onPress={() => navigation.navigate('ClaimedItemsScreen', { claimedItems })}
+                title="Add Food Item"
+                onPress={() => navigation.navigate('NewFoodItem', { onAddFoodItem: handleAddFoodItem })}
             />
         </View>
     );
