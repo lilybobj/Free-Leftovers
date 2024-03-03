@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Food Item</title>
+</head>
+<body>
+    <h2>Add Food Item</h2>
+    <form id="add-food-form">
+        <label for="food-name">Food Name:</label>
+        <input type="text" id="food-name" name="food-name" required>
+        <button type="submit">Add Food</button>
+    </form>
+
+    <script>
+        document.getElementById('add-food-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the input value
+            const foodNameInput = document.getElementById('food-name');
+            const foodName = foodNameInput.value.trim();
+
+            if (foodName) {
+                // Add the new food item to the main listing page
+                window.opener.addFoodItem(foodName);
+
+                // Clear the input field
+                foodNameInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
