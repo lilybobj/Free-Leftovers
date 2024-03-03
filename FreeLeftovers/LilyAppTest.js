@@ -8,7 +8,7 @@ import NewFoodItemScreen from './NewFoodItemScreen';
 
 const Stack = createStackNavigator();
 
-const App = () => {
+const LilyAppTest = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Main">
@@ -20,4 +20,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default LilyAppTest;
