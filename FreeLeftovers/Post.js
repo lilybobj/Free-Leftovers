@@ -4,9 +4,11 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 export default function Post() {
   return (  
     <View style={styles.container}>
-      <Text>Josh's Banana</Text>
-      <StatusBar style="auto" />
-      <Button title="hi"></Button>
+        
+        <Text>Josh's Banana</Text>
+        <StatusBar style="auto" />
+        
+      
     </View>
     
   );
@@ -15,7 +17,7 @@ export default function Post() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'plum',
     alignItems: 'center',
     justifyContent: 'center',
   },
